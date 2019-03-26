@@ -5,7 +5,7 @@ import java.util.List;
 
 public class ListaCandidatiAdmisi extends ListaCandidati {
 
-    private int locuriDisponibile;
+    private final int locuriDisponibile;
 
     public ListaCandidatiAdmisi(int locuriDisponibile){
         super();

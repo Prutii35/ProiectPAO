@@ -79,7 +79,7 @@ public class Candidat implements Comparable<Candidat> {
 
     public double getMedieIntrare() { return medieIntrare; }
 
-    public double getMedieBac() { return Bac.getMedie(); };
+    public double getMedieBac() { return Bac.getMedie(); }
 
     public double getMedieAdmitere() { return Admitere.getMedieAdmitere(); }
 

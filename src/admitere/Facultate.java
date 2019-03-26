@@ -6,11 +6,11 @@ import java.util.Scanner;
 
 public abstract class Facultate {
 
-    private String NumeFacultate;
-    private String Specializare;
-    private final int NumarLocuri;
+    protected String NumeFacultate;
+    protected String Specializare;
+    protected final int NumarLocuri;
 
-    private Queue <Candidat> listaRespinsi;
+    protected Queue <Candidat> listaRespinsi;
     protected ListaCandidatiAdmisi listaAdmisi;
     protected ListaCandidati listaCandidati;
 
