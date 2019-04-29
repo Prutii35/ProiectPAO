@@ -38,9 +38,9 @@ public class ListaCandidati {
         Collections.sort(lista);
     }
 
-    public void afiseazaCandidati(){
+    public void afiseazaCandidati(String path){
         for(int i = 0 ; i < locuriOcupate; i++){
-            lista.get(i).printeazaInformatii();
+            lista.get(i).printeazaInformatii(path);
         }
     }
 

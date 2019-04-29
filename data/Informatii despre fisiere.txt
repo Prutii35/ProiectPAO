@@ -1,0 +1,9 @@
+----- Informatii despre fiecare fisier csv ------
+
+-In fisierele inputFacultateStat si inputFacultatePrivata se afla date despre fiecare facultate si anume, nume,specializare si conventie
+-In fisierul inputCandidat sunt date pe fiecare linie numele, prenumele, 3 note de la bac + 2 note de la admitere, facultatea la care aplica fiecare candidat
+
+-In fisierul outputFacultateStat/Privata sunt afisati candidatii care au aplicat la facultatea respectiva, ordonati descrescator dupa medie, lista de candidati admisi, lista de candidati respinsi
+
+
+-Conventie: O facultate poate sa aiba din start 0 locuri libere, iar candidati care vor aplica la facultatea respectiva vor fi trecuti automat pe lista de respinsi

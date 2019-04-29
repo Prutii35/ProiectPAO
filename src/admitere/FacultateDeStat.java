@@ -4,7 +4,6 @@ public class FacultateDeStat extends Facultate {
     public FacultateDeStat(String nume, String speci, int locuri) {
         super(nume, speci, locuri);
     }
-    public FacultateDeStat() { super();}
 
     @Override
     public double calculeazaMediaIntrare(double MedieBac, double MedieAdmitere){
@@ -12,8 +11,10 @@ public class FacultateDeStat extends Facultate {
     }
 
     @Override
-    public void printInformatii(){
-        System.out.println("\nInformatii pentru facultatea de stat : \n");
-        super.printInformatii();
+    public void printInformatii(String path){
+        ServiceOutput s = new ServiceOutput();
+        s.printStringFacultate(path,"\n---------Informatii pentru facultatea de stat--------");
+        super.printInformatii(path);
     }
+
 }

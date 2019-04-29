@@ -23,8 +23,9 @@ public class ListaCandidatiAdmisi extends ListaCandidati {
         }
     }
     @Override
-    public void afiseazaCandidati(){
-        System.out.println("---------Lista candidati admisi ---------");
-        super.afiseazaCandidati();
+    public void afiseazaCandidati(String path){
+        ServiceOutput s = new ServiceOutput();
+        s.printString(path,"---------Lista candidati admisi ---------\n");
+        super.afiseazaCandidati(path);
     }
 }

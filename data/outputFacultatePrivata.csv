@@ -1,0 +1,55 @@
+
+-------Informatii pentru facultatea privata--------- 
+
+Nume : ASE ,
+Specializare : Market ,
+Numar Locuri : 2,
+
+ -----Lista candidati pentru facultate------
+
+Nume : Mircea,
+Prenume:  Mircea,
+Medie Bac: 7.0,
+Medie Admitere: 7.0,
+Tipul de facultate : Privata,
+
+Nume : Dinu,
+Prenume: Dinu,
+Medie Bac: 4.0,
+Medie Admitere: 4.0,
+Tipul de facultate : Privata,
+
+Nume : Iulian,
+Prenume: Iulian,
+Medie Bac: 2.0,
+Medie Admitere: 2.0,
+Tipul de facultate : Privata,
+
+
+
+ ------Lista candidati admisi pentru facultatea--------
+
+ 
+---------Lista candidati admisi ---------
+
+Nume : Mircea,
+Prenume:  Mircea,
+Medie Bac: 7.0,
+Medie Admitere: 7.0,
+Tipul de facultate : Privata,
+
+Nume : Dinu,
+Prenume: Dinu,
+Medie Bac: 4.0,
+Medie Admitere: 4.0,
+Tipul de facultate : Privata,
+
+
+ ------Lista candidati respinsi pentru facultatea--------
+ 
+Nume : Iulian,
+Prenume: Iulian,
+Medie Bac: 2.0,
+Medie Admitere: 2.0,
+Tipul de facultate : Privata,
+

@@ -1,8 +1,13 @@
 //Am pus doar 2 facultati pentru a nu complica proiectul foarte mult dar se pot utiliza si mai multe facultati
 //Exista doar 2 tipuri de facultati de stat si privata
-//Convetie : prima facultate este de stat, iar a doua privata
-//Conventie : atunci cand se decide la ce facultate aplica candidatul -> stat sau privata
-//Pentru etapa viitoare voi updata proiectul si voi face ca acesta sa isi aleaga din mai multe facultati
+
+
+//fisier inout candidati : se vor da numele, prenumele , si cele 3 note de la bac si 2 de la admitere si facultatea la care aplica
+//0 pentru stat 1 pentru privata
+
+// fisierele input pentru facultati se vor da numele, specializarea si numarul delocuri disponibile
+
+// in output pentru fiecare facultate se vor da lista de candidati(in oridine crescatoare dupa medie), lista de admisi si lista de respinsi
 package admitere;
 
 public class Main {
@@ -15,10 +20,8 @@ public class Main {
         servici.creeazFacultatePrivata();
         servici.printeazaInformatiiFacultatePrivata();
 
-        servici.creeazaCandidat();
-        servici.creeazaCandidat();
-        servici.creeazaCandidat();
-        servici.creeazaCandidat();
+        servici.citesteCandidati();
+
 
         servici.sorteazaListaCandidati();
 

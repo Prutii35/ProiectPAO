@@ -4,7 +4,6 @@ public class FacultatePrivata extends Facultate {
     public FacultatePrivata(String nume, String speci, int locuri) {
         super(nume, speci, locuri);
     }
-    public FacultatePrivata() { super(); }
 
     @Override
     public double calculeazaMediaIntrare(double MedieBac, double MedieAdmitere){
@@ -12,8 +11,9 @@ public class FacultatePrivata extends Facultate {
     }
 
     @Override
-    public void printInformatii(){
-        System.out.println("\nInformatii pentru facultatea privata : \n");
-        super.printInformatii();
+    public void printInformatii(String path){
+        ServiceOutput s = new ServiceOutput();
+        s.printStringFacultate(path,"\n-------Informatii pentru facultatea privata--------- \n");
+        super.printInformatii(path);
     }
 }

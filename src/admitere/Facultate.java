@@ -39,38 +39,20 @@ public abstract class Facultate {
         this.listaRespinsi = new LinkedList<Candidat>();
     }
 
-    public Facultate(){
-
-        Scanner reader = new Scanner(System.in);
-
-        System.out.println("Numele Facultatii : ");
-        this.NumeFacultate = reader.nextLine();
-
-        System.out.println("Specializarea : ");
-        this.Specializare = reader.nextLine();
-
-        System.out.println("Numar locuri : ");
-        this.NumarLocuri = reader.nextInt();
-
-        this.listaCandidati = new ListaCandidati();
-        this.listaAdmisi = new ListaCandidatiAdmisi(this.NumarLocuri);
-        this.listaRespinsi =  new LinkedList<Candidat>();
-    }
-
-    public void printInformatii(){
-        System.out.println("Nume Facultate : " + this.NumeFacultate);
-        System.out.println("Specializare : " + this.Specializare);
-        System.out.println("Numar de locuri disponibile : " + this.NumarLocuri);
-        System.out.println(" \n\n ");
+    public void printInformatii(String path){
+        ServiceOutput s = new ServiceOutput();
+        s.printeazaInformatiiFacultate(path,this.NumeFacultate,this.Specializare,this.NumarLocuri);
     }
 
     public void setListaAdmisiRespinsi(){
         if(listaCandidati.locuriOcupate != 0) {
-            for (int i = 0; i < this.NumarLocuri; i++) {
-                this.listaAdmisi.adaugaCandidat(this.listaCandidati.lista.get(i));
-            }
-            for (int i = this.NumarLocuri; i < this.listaCandidati.lista.size(); i++) {
-                this.listaRespinsi.add(this.listaCandidati.lista.get(i));
+            for(int i = 0 ; i< listaCandidati.locuriOcupate ; i++){
+                if( i < this.NumarLocuri){
+                    this.listaAdmisi.adaugaCandidat(this.listaCandidati.lista.get(i));
+                }
+                else{
+                    this.listaRespinsi.add(this.listaCandidati.lista.get(i));
+                }
             }
         }
         else{
@@ -95,17 +77,22 @@ public abstract class Facultate {
         return listaCandidati.getCandidatI(poz);
     }
 
-    public void afiseazaCandidati(){
+    public void afiseazaCandidati(String path){
         if(NumarLocuri != 0) {
             if (listaCandidati.locuriOcupate != 0) {
-                System.out.println("\n -----Lista candidati pentru facultatea " + this.NumeFacultate + "-----\n");
-                listaCandidati.afiseazaCandidati();
+                ServiceOutput s = new ServiceOutput();
+                s.printString(path,"\n -----Lista candidati pentru facultate------\n");
+                listaCandidati.afiseazaCandidati(path);
             } else {
-                System.out.println("\nNu sunt candidati la facultatea " + this.NumeFacultate);
+                ServiceOutput s = new ServiceOutput();
+                String string = "\nNu sunt candidati la facultatea " + this.NumeFacultate;
+                s.printString(path,string);
             }
         }
         else{
-            System.out.println("\nFacultatea " +this.NumeFacultate + " nu are locuri");
+            ServiceOutput s = new ServiceOutput();
+            String string = "\nFacultatea " +this.NumeFacultate + " nu are locuri";
+            s.printString(path,string);
         }
     }
 
@@ -123,13 +110,16 @@ public abstract class Facultate {
         return listaAdmisi.getCandidatI(poz);
     }
 
-    public void afiseazaAdmisi(){
+    public void afiseazaAdmisi(String path){
         if(listaAdmisi.locuriOcupate != 0) {
-            System.out.println("\n -----Lista candidati admisi pentru facultatea " + this.getNumeFacultate() + "-----\n");
-            listaAdmisi.afiseazaCandidati();
+            ServiceOutput s = new ServiceOutput();
+            s.printString(path,"\n\n ------Lista candidati admisi pentru facultatea--------\n\n ");
+            listaAdmisi.afiseazaCandidati(path);
         }
         else{
-            System.out.println("Nu sunt candidati admisi la facultatea " + this.getNumeFacultate());
+            ServiceOutput s = new ServiceOutput();
+            String string = "Nu sunt candidati admisi la facultatea " + this.getNumeFacultate();
+            s.printString(path,string);
         }
     }
 
@@ -143,15 +133,18 @@ public abstract class Facultate {
         return listaRespinsi.poll();
     }
 
-    public void afiseazaRespinsi(){
+    public void afiseazaRespinsi(String path){
         if(listaRespinsi.size() != 0 ) {
-            System.out.println("\n ------Lista candidati respinsi pentru facultatea " + this.NumeFacultate + "------\n");
+            ServiceOutput s = new ServiceOutput();
+            s.printString(path,"\n ------Lista candidati respinsi pentru facultatea--------\n ");
             for (Candidat c : listaRespinsi) {
-                c.printeazaInformatii();
+                c.printeazaInformatii(path);
             }
         }
         else{
-            System.out.println("Nu sunt candidati respinsi la facultatea " + this.NumeFacultate);
+            ServiceOutput s = new ServiceOutput();
+            String string = "Nu sunt candidati respinsi la facultatea " + this.NumeFacultate;
+            s.printString(path,string);
         }
     }
 }
