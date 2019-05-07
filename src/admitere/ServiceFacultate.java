@@ -10,6 +10,8 @@ public class ServiceFacultate {
     private Facultate facultateDeStat;
     private Facultate facultatePrivata;
 
+    private ServiceAudit serviceAudit = new ServiceAudit();
+
     public void creeazaFaculttateStat(){
 
         Path p = Paths.get("data\\inputFacultateStat.csv");
@@ -23,6 +25,7 @@ public class ServiceFacultate {
         } catch (IOException e) {
             System.out.println(":(");
         }
+        serviceAudit.facultateCreata("stat");
     }
 
     public void creeazFacultatePrivata(){
@@ -37,6 +40,8 @@ public class ServiceFacultate {
         } catch (IOException e) {
             System.out.println(":(");
         }
+
+        serviceAudit.facultateCreata("privata");
     }
 
     public void citesteCandidati(){
@@ -64,10 +69,13 @@ public class ServiceFacultate {
                 else{
                     System.out.println("Candidatul " + candidatGeneral.getNume() + candidatGeneral.getPrenume() + "a aplicat la o facultate care nu exista");
                 }
+
+                serviceAudit.candidatCreat();
             }
         } catch (IOException e) {
             System.out.println(":(");
         }
+
     }
     public void prineazaInformatiiFacultateStat(){
         facultateDeStat.printInformatii("data\\outputFacultateStat.csv");
@@ -81,7 +89,9 @@ public class ServiceFacultate {
 
     public void sorteazaListaCandidati(){
         facultateDeStat.sortByMedie();
+        serviceAudit.candidatiSortati("stat");
         facultatePrivata.sortByMedie();
+        serviceAudit.candidatiSortati("privata");
     }
 
     public void afiseazaCandidatiStat(){
@@ -94,10 +104,12 @@ public class ServiceFacultate {
 
     public void setListaAdmisiRespinsiStat(){
         facultateDeStat.setListaAdmisiRespinsi();
+        serviceAudit.listaAdmisiRespinsicreata("stat");
     }
 
     public void setListaAdmisiRespinsiPrivata(){
         facultatePrivata.setListaAdmisiRespinsi();
+        serviceAudit.listaAdmisiRespinsicreata("privata");
     }
 
     public void afiseazaAdmisiStat(){

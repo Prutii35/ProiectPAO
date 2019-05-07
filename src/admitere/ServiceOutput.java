@@ -13,7 +13,7 @@ public class ServiceOutput {
             pw.println("Numar Locuri : " + locuri + ",");
             pw.flush();
             pw.close();
-        }catch(IOException ex){
+        }catch(IOException ex) {
             ex.printStackTrace();
         }
     }
