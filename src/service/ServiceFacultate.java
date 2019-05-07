@@ -1,4 +1,9 @@
-package admitere;
+package service;
+
+import admitere.Candidat;
+import admitere.Facultate;
+import admitere.FacultateDeStat;
+import admitere.FacultatePrivata;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -84,8 +89,6 @@ public class ServiceFacultate {
     public void printeazaInformatiiFacultatePrivata(){
         facultatePrivata.printInformatii("data\\outputFacultatePrivata.csv");
     }
-
-
 
     public void sorteazaListaCandidati(){
         facultateDeStat.sortByMedie();

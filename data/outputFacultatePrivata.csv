@@ -2,8 +2,8 @@
 -------Informatii pentru facultatea privata--------- 
 
 Nume : ASE ,
-Specializare : Market ,
-Numar Locuri : 2,
+Specializare : Cibernetica ,
+Numar Locuri : 1,
 
  -----Lista candidati pentru facultate------
 
@@ -38,15 +38,15 @@ Medie Bac: 7.0,
 Medie Admitere: 7.0,
 Tipul de facultate : Privata,
 
+
+ ------Lista candidati respinsi pentru facultatea--------
+ 
 Nume : Dinu,
 Prenume: Dinu,
 Medie Bac: 4.0,
 Medie Admitere: 4.0,
 Tipul de facultate : Privata,
 
-
- ------Lista candidati respinsi pentru facultatea--------
- 
 Nume : Iulian,
 Prenume: Iulian,
 Medie Bac: 2.0,

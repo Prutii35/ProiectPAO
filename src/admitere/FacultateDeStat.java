@@ -1,5 +1,7 @@
 package admitere;
 
+import service.ServiceOutput;
+
 public class FacultateDeStat extends Facultate {
     public FacultateDeStat(String nume, String speci, int locuri) {
         super(nume, speci, locuri);

@@ -1,7 +1,6 @@
 package admitere;
 
-import java.util.ArrayList;
-import java.util.List;
+import service.ServiceOutput;
 
 public class ListaCandidatiAdmisi extends ListaCandidati {
 

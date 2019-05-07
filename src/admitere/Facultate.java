@@ -1,8 +1,9 @@
 package admitere;
 
+import service.ServiceOutput;
+
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
 
 public abstract class Facultate {
 

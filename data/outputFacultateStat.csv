@@ -2,7 +2,7 @@
 ---------Informatii pentru facultatea de stat--------
 Nume : Universitate ,
 Specializare : Informatica ,
-Numar Locuri : 1,
+Numar Locuri : 2,
 
  -----Lista candidati pentru facultate------
 
@@ -37,15 +37,15 @@ Medie Bac: 9.0,
 Medie Admitere: 9.0,
 Tipul de facultate : De Stat,
 
-
- ------Lista candidati respinsi pentru facultatea--------
- 
 Nume : Alex,
 Prenume: Alex,
 Medie Bac: 8.0,
 Medie Admitere: 8.0,
 Tipul de facultate : De Stat,
 
+
+ ------Lista candidati respinsi pentru facultatea--------
+ 
 Nume : Prutianu ,
 Prenume: Adrian ,
 Medie Bac: 5.0,

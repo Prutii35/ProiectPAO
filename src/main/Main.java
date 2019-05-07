@@ -8,7 +8,13 @@
 // fisierele input pentru facultati se vor da numele, specializarea si numarul delocuri disponibile
 
 // in output pentru fiecare facultate se vor da lista de candidati(in oridine crescatoare dupa medie), lista de admisi si lista de respinsi
-package admitere;
+package main;
+
+
+///de grupat clasele in pachete separate
+/// de modificat close ul la fisier
+
+import service.ServiceFacultate;
 
 public class Main {
     public static void main(String[] args) {

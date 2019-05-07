@@ -1,6 +1,6 @@
 package admitere;
 
-import java.util.Scanner;
+import service.ServiceOutput;
 
 public class Candidat implements Comparable<Candidat> {
 
