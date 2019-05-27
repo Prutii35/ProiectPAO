@@ -14,10 +14,14 @@ package main;
 ///de grupat clasele in pachete separate
 /// de modificat close ul la fisier
 
-import service.ServiceFacultate;
+import gui.AdmitereFrame;
 
 public class Main {
     public static void main(String[] args) {
+
+        new AdmitereFrame();
+
+/*
         ServiceFacultate servici = new ServiceFacultate();
 
         servici.creeazaFaculttateStat();
@@ -27,7 +31,6 @@ public class Main {
         servici.printeazaInformatiiFacultatePrivata();
 
         servici.citesteCandidati();
-
 
         servici.sorteazaListaCandidati();
 
@@ -42,5 +45,10 @@ public class Main {
         servici.setListaAdmisiRespinsiPrivata();
         servici.afiseazaAdmisiPrivata();
         servici.afiseazaRespinsiPrivata();
+
+
+ */
+
+        }
+
     }
-}

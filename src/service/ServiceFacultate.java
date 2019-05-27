@@ -17,6 +17,24 @@ public class ServiceFacultate {
 
     private ServiceAudit serviceAudit = new ServiceAudit();
 
+    public Facultate getFacultateDeStat() {
+        return facultateDeStat;
+    }
+
+    public Facultate getFacultatePrivata() {
+        return facultatePrivata;
+    }
+
+    public void JDBCcreeazaFacultateStat(String nume, String specializare, Integer locuri){
+        facultateDeStat = new FacultateDeStat(nume,specializare,locuri);
+        serviceAudit.facultateCreata("stat");
+    }
+
+    public void JDBCCreaazaFacultatePrivata(String nume,String specializare,Integer locuri){
+        facultatePrivata = new FacultatePrivata(nume,specializare,locuri);
+        serviceAudit.facultateCreata("privata");
+    }
+
     public void creeazaFaculttateStat(){
 
         Path p = Paths.get("data\\inputFacultateStat.csv");

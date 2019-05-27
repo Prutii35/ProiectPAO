@@ -1,7 +1,7 @@
 
 ---------Informatii pentru facultatea de stat--------
-Nume : Universitate ,
-Specializare : Informatica ,
+Nume : Univ,
+Specializare : Infi,
 Numar Locuri : 2,
 
  -----Lista candidati pentru facultate------
@@ -18,8 +18,8 @@ Medie Bac: 8.0,
 Medie Admitere: 8.0,
 Tipul de facultate : De Stat,
 
-Nume : Prutianu ,
-Prenume: Adrian ,
+Nume : Prutianu,
+Prenume: Adrian,
 Medie Bac: 5.0,
 Medie Admitere: 5.0,
 Tipul de facultate : De Stat,
@@ -46,8 +46,8 @@ Tipul de facultate : De Stat,
 
  ------Lista candidati respinsi pentru facultatea--------
  
-Nume : Prutianu ,
-Prenume: Adrian ,
+Nume : Prutianu,
+Prenume: Adrian,
 Medie Bac: 5.0,
 Medie Admitere: 5.0,
 Tipul de facultate : De Stat,

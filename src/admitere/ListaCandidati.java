@@ -11,7 +11,16 @@ import java.util.List;
 public class ListaCandidati {
 
     protected List <Candidat> lista;
+
     protected int locuriOcupate;
+
+    public List<Candidat> getLista() {
+        return lista;
+    }
+
+    public int getLocuriOcupate() {
+        return locuriOcupate;
+    }
 
     public ListaCandidati(){
         lista = new ArrayList<Candidat>();

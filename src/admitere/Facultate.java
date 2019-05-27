@@ -15,6 +15,18 @@ public abstract class Facultate {
     protected ListaCandidatiAdmisi listaAdmisi;
     protected ListaCandidati listaCandidati;
 
+    public Queue<Candidat> getListaRespinsi() {
+        return listaRespinsi;
+    }
+
+    public ListaCandidatiAdmisi getListaAdmisi() {
+        return listaAdmisi;
+    }
+
+    public ListaCandidati getListaCandidati() {
+        return listaCandidati;
+    }
+
     public String getNumeFacultate() {
         return NumeFacultate;
     }
