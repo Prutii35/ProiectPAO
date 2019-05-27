@@ -25,6 +25,10 @@ public class AdmitereFrame extends JFrame{
     private JButton b4 = new JButton("Rezultate Admitere");
     private JButton b5 = new JButton("Gestionare candidati");
 
+    private JButton b6 = new JButton("Afisare Candidati");
+    private JButton b7 = new JButton("Afisare Candidati Admisi");
+    private JButton b8 = new JButton("Afisare Candidati Respinsi");
+
     public AdmitereFrame(){
 
         super("Admitere Facultate"); // TITLU
@@ -43,12 +47,22 @@ public class AdmitereFrame extends JFrame{
         c.gridy = 0;
         p1.add(b2,c);
 
+        c.gridy = 2;
+        p1.add(b7,c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 15;
         c.weightx = 0.5;
         c.gridx = 2;
         c.gridy = 0;
         p1.add(b1,c);
+
+        c.gridy = 2;
+        p1.add(b8,c);
+
+        b6.setEnabled(false);
+        b7.setEnabled(false);
+        b8.setEnabled(false);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 15;
@@ -57,6 +71,9 @@ public class AdmitereFrame extends JFrame{
         c.gridy = 0;
         p1.add(b5,c);
         b5.setEnabled(false);
+
+        c.gridy = 2;
+        p1.add(b6,c);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;      //make this component tall
@@ -73,15 +90,19 @@ public class AdmitereFrame extends JFrame{
         c.anchor = GridBagConstraints.PAGE_END; //bottom of space
         c.insets = new Insets(10,0,0,0);  //top padding
         c.gridx = 0;       //aligned with button 2
-        c.gridy = 2;       //third row
+        c.gridy = 3;       //third row
         p1.add(b4,c);
         b4.setEnabled(false);
+
 
         b1.addActionListener(ev -> creeazaFacultateStat());
         b2.addActionListener(ev -> creeazaFacultatePrivata());
         b3.addActionListener(ev -> adaugaCandidati());
         b4.addActionListener(ev -> makeLists());
         b5.addActionListener(ev -> gestionareCandidati());
+        b6.addActionListener(ev -> afiseazaCandidati());
+        b7.addActionListener(ev -> afiseazaCandidatiAdmisi());
+        b8.addActionListener(ev -> afiseazaCandidatiRespinsi());
 
         setVisible(true);
     }
@@ -134,6 +155,8 @@ public class AdmitereFrame extends JFrame{
                 b3.setEnabled(true);
             }
         });
+
+
     }
 
     public void creeazaFacultatePrivata(){
@@ -200,6 +223,7 @@ public class AdmitereFrame extends JFrame{
         }
         b3.setEnabled(false);
         b4.setEnabled(true);
+        b6.setEnabled(true);
     }
 
     public void makeLists(){
@@ -240,6 +264,11 @@ public class AdmitereFrame extends JFrame{
         }
         b4.setEnabled(false);
         b5.setEnabled(true);
+
+        b7.setEnabled(true);
+        b8.setEnabled(true);
+
+
     }
 
     public void gestionareCandidati(){
@@ -357,7 +386,7 @@ public class AdmitereFrame extends JFrame{
             if(serviceFacultate.getFacultateDeStat().getListaAdmisi().getLista().size() > 0){
                 JFrame j = new JFrame();
 
-                j.setSize(300,300);
+                j.setSize(200,300);
                 j.setLayout(new FlowLayout());
                 j.setLocationRelativeTo(null);
                 j.setVisible(true);
@@ -492,9 +521,115 @@ public class AdmitereFrame extends JFrame{
             p1.setVisible(true);
             p.setVisible(false);
         });
+    }
 
+    public void afiseazaCandidati(){
 
+        JFrame j = new JFrame();
 
+        j.setSize(400,400);
+        j.setLayout(new FlowLayout());
+        j.setLocationRelativeTo(null);
+        j.setVisible(true);
+
+        JLabel l = new JLabel("<html>Nume - Prenume - MedieBac - MedieAdmitere - Facultate<br><br>");
+
+        for(Candidat c : serviceFacultate.getFacultateDeStat().getListaCandidati().getLista()){
+            String tip;
+            if(c.getTipFacultate()==0){
+                tip = "privata";
+            }
+            else{
+                tip = "stat";
+            }
+            l.setText(l.getText() + c.getPrenume() + "  -  " + c.getNume() + "  -  " + c.getMedieBac() + "  -  " + c.getMedieAdmitere() + "  -  " + tip + "<br><br>" );
+        }
+
+        for(Candidat c : serviceFacultate.getFacultatePrivata().getListaCandidati().getLista()){
+            String tip;
+            if(c.getTipFacultate()==0){
+                tip = "privata";
+            }
+            else{
+                tip = "stat";
+            }
+            l.setText(l.getText() + c.getPrenume() + "  -  " + c.getNume() + "  -  " + c.getMedieBac() + "  -  " + c.getMedieAdmitere() + "  -  "+ tip + "<br><br>" );
+        }
+        l.setText(l.getText() + "<br></html>");
+        j.add(l);
+
+    }
+
+    public void afiseazaCandidatiAdmisi(){
+
+        JFrame j = new JFrame();
+
+        j.setSize(400,400);
+        j.setLayout(new FlowLayout());
+        j.setLocationRelativeTo(null);
+        j.setVisible(true);
+
+        JLabel l = new JLabel("<html>Nume - Prenume - MedieBac - MedieAdmitere - Facultate<br><br>");
+
+        for(Candidat c : serviceFacultate.getFacultateDeStat().getListaAdmisi().getLista()){
+            String tip;
+            if(c.getTipFacultate()==0){
+                tip = "privata";
+            }
+            else{
+                tip = "stat";
+            }
+            l.setText(l.getText() + c.getPrenume() + "  -  " + c.getNume() + "  -  " + c.getMedieBac() + "  -  " + c.getMedieAdmitere() + "  -  " + tip + "  -  acceptat  " + "<br><br>" );
+        }
+
+        for(Candidat c : serviceFacultate.getFacultatePrivata().getListaAdmisi().getLista()){
+            String tip;
+            if(c.getTipFacultate()==0){
+                tip = "privata";
+            }
+            else{
+                tip = "stat";
+            }
+            l.setText(l.getText() + c.getPrenume() + "  -  " + c.getNume() + "  -  " + c.getMedieBac() + "  -  " + c.getMedieAdmitere() + "  -  "+ tip + "  -  acceptat  " + "<br><br>" );
+        }
+        l.setText(l.getText() + "<br></html>");
+        j.add(l);
+    }
+
+    public void afiseazaCandidatiRespinsi(){
+
+        JFrame j = new JFrame();
+
+        j.setSize(400,400);
+        j.setLayout(new FlowLayout());
+        j.setLocationRelativeTo(null);
+        j.setVisible(true);
+
+        JLabel l = new JLabel("<html>Nume - Prenume - MedieBac - MedieAdmitere - Facultate<br><br>");
+
+        for(Candidat c : serviceFacultate.getFacultateDeStat().getListaRespinsi()){
+            String tip;
+            if(c.getTipFacultate()==0){
+                tip = "privata";
+            }
+            else{
+                tip = "stat";
+            }
+            l.setText(l.getText() + c.getPrenume() + "  -  " + c.getNume() + "  -  " + c.getMedieBac() + "  -  " + c.getMedieAdmitere() + "  -  " + tip + " -  refuzat "+ "<br><br>" );
+        }
+
+        for(Candidat c : serviceFacultate.getFacultatePrivata().getListaRespinsi()){
+            String tip;
+            if(c.getTipFacultate()==0){
+                tip = "privata";
+            }
+            else{
+                tip = "stat";
+            }
+            l.setText(l.getText() + c.getPrenume() + "  -  " + c.getNume() + "  -  " + c.getMedieBac() + "  -  " + c.getMedieAdmitere() + "  -  "+ tip + "  -  refuzat " + "<br><br>" );
+        }
+        l.setText(l.getText() + "<br></html>");
+        j.add(l);
 
     }
 
